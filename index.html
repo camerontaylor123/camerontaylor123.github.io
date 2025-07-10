@@ -132,6 +132,19 @@
 								</section>
 								<hr />
 
+								<h2>Recent Publications</h2>
+								<div id="publications"></div>
+
+								<script>
+								fetch("data/publications.html")
+									.then(res => res.text())
+									.then(html => {
+									document.getElementById("publications").innerHTML = html;
+									})
+									.catch(err => {
+									console.error("Failed to load publications:", err);
+									});
+								</script>
 
 								
 								<section class="publications">
