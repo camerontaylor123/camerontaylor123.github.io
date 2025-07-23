@@ -5,6 +5,74 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+
+	<!-- Navigation Tabs -->
+	<head>
+	<meta charset="UTF-8">
+	<title>Horizontal Nav Tabs</title>
+	<style>
+		html {
+		scroll-behavior: smooth;
+		}
+
+		body {
+		margin: 0;
+		font-family: sans-serif;
+		}
+
+		/* Sticky top nav bar */
+		nav {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		background: white;
+		z-index: 1000;
+		border-bottom: 1px solid #ccc;
+		}
+
+		/* Make nav items horizontal, no bullets */
+		.navbar {
+		list-style: none;
+		margin: 0;
+		padding: 1rem;
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		}
+
+		.navbar li {
+		margin: 0;
+		}
+
+		.navbar a {
+		text-decoration: none;
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: black;
+		}
+
+		.navbar a:hover {
+		color: #007bff;
+		}
+
+		/* Prevent content from hiding behind fixed nav */
+		section {
+		padding: 120px 20px 60px;
+		min-height: 100vh;
+		}
+	</style>
+	</head>
+	<body>
+
+	<nav>
+		<ul class="navbar">
+		<li><a href="#home">Home</a></li>
+		<li><a href="#collaborators">Collaborators</a></li>
+		<li><a href="#Publications">Publications</a></li>
+		<li><a href="#contact">Contact</a></li>
+		</ul>
+	</nav>
+
 	<head>
 		<title>International Consortium</title>
 		<meta charset="utf-8" />
@@ -101,7 +169,7 @@
 					<div id="main">
 						<div class="inner">
 			
-							<header>
+							<header id="'home">
 								<hr />
 								<div class="title-with-image">
 									<h1>The International Paediatric Hypertrophic Cardiomyopathy Consortium</h1>
@@ -116,7 +184,7 @@
 							</header>
 
 							<hr />
-							<section>
+							<section id = 'collaborators'>
 								<h2 style="margin-bottom: 10px;">Collaborators</h2>
 								<img src="Map_HCM.png" alt="Collaborators" style="width: 50%; height: 500px; margin: 0 auto 20px auto; display: block;" />
 
@@ -356,14 +424,12 @@
 						<hr />
 						</div>
 					</div>
-
 	
 					
-			
 				<!-- Footer -->
 				<footer id="footer">
 				<div class="inner footer-flex">
-					<section class="footer-contact">
+					<section class="footer-contact" id=" 'contact">
 					<h2>Contact</h2>
 					<p>
 						If you are interested in joining the IPHCC please contact us on: <br />
