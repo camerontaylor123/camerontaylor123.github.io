@@ -376,8 +376,8 @@
             
             <section id="publications">
                 <h2>Recent Publications</h2>
-                <div>
-                    <script>
+                <div id="'pubs-container"></div>
+                <script>
                     fetch("data/publications.html")
                         .then(res => res.text())
                         .then(html => {
@@ -387,8 +387,9 @@
                             console.error("Failed to load publications:", err);
                         });
                     </script>
-				</div>
             </section>
+
+			
 
             <hr />
             <!-- Footer -->
