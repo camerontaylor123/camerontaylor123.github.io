@@ -376,18 +376,20 @@
             
             <section id="publications">
                 <h2>Recent Publications</h2>
-                <div id="'pubs-container"></div>
+                <div id="pubs-container"></div>
+
                 <script>
                     fetch("data/publications.html")
                         .then(res => res.text())
                         .then(html => {
-                            document.getElementById("publications").innerHTML = html;
+                            document.getElementById("pubs-container").innerHTML = html;
                         })
                         .catch(err => {
                             console.error("Failed to load publications:", err);
                         });
-                    </script>
+                </script>
             </section>
+
 
 			
 
