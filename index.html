@@ -33,6 +33,14 @@
                 color: #e8717b;
             }
 
+            .responsive-img {
+                width: 100%;
+                max-width: 600px;
+                height: auto;
+                display: block;
+                margin: 0 auto 20px auto;
+            }
+
             nav {
                 position: fixed;
                 top: 0;
@@ -66,6 +74,19 @@
                 color: #e8717b;
             }
 
+            @media (max-width: 600px) {
+                .navbar {
+                    flex-direction: column;
+                    gap: 1rem;
+                    padding: 1rem 0;
+                }
+
+                .navbar a {
+                    font-size: 1.2rem;
+                }
+            }
+
+
             .title-with-image {
                 display: flex;
                 align-items: center;
@@ -82,6 +103,17 @@
             .header-image {
                 max-width: 500px;
                 height: auto;
+            }
+
+            @media (max-width: 768px) {
+                .title-with-image {
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                .header-image {
+                    max-width: 100%;
+                }
             }
 
 
@@ -103,7 +135,7 @@
 				text-align: left;
             }
 
-            th, td {
+            table th, table td {
                 padding: 4px 8px;
                 border: 1px solid #ddd;
             }
@@ -152,6 +184,18 @@
                 column-gap: 2rem;
             }
 
+            @media (max-width: 600px) {
+                .table-grid {
+                    column-count: 1;
+                }
+            }
+
+            .table-responsive {
+                overflow-x: auto;
+                width: 100%;
+            }
+
+
             .region {
                 break-inside: avoid;
                 margin-bottom: 2rem;
@@ -198,7 +242,7 @@
                 justify-content: space-between;
                 align-items: flex-start;
                 flex-wrap: wrap;
-                gap: 2rem;
+                gap: 1rem;
                 margin-bottom: 0;
             }
 
@@ -212,15 +256,108 @@
                 gap: 12px;
                 align-items: flex-end;
                 padding-right: 20px;
+                flex: 1;
             }
 
             .footer-logo {
                 height: auto;
                 width: 400px;
+                max-width: 50%;
                 display: block;
                 margin: 10px;
                 padding: 10px;
             }
+
+            @media (max-width: 768px) {
+                .footer-flex {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                .footer-contact,
+                .footer-logos {
+                    align-items: center;
+                    padding: 0;
+                }
+            }
+
+            @media (max-width: 600px) {
+
+
+            .responsive-img {
+                max-width: 90%;
+            }
+            
+            .navbar {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+                padding: 0.5rem 0;
+            }
+
+            .navbar a {
+                font-size: 1rem; 
+            }
+
+            body {
+                font-size: 12px;
+                padding-top: 60px;
+            }
+
+            .title-with-image h1 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            .header-image {
+                max-width: 100%;
+                height: auto;
+            }
+
+            table,
+            .partners-table,
+            .clean-table {
+                font-size: 8px;
+            }
+
+            .table-grid {
+                column-count: 2; 
+                column-gap: 0.8rem;
+            }
+
+            .region h3 {
+                font-size: 16px;
+            }
+
+            th, td {
+                padding: 4px 6px;
+            }
+
+            .footer-logo {
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .footer-flex {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .footer-contact,
+            .footer-logos {
+                align-items: center;
+                padding: 0;
+            }
+
+            .clean-table tr:last-child td {
+                border-bottom: 1px solid #ddd;
+            }
+        }
+
         </style>
     </head>
 
@@ -254,13 +391,14 @@
             <hr />
             <section id="collaborators">
                 <h2 style="margin-bottom: 10px;">Collaborators</h2>
-			    <img src="Map_HCM.png" alt="Collaborators" style="width: 50%; height: 500px; margin: 0 auto 20px auto; display: block;" />
+			    <img src="Map_HCM.png" alt="Collaborators" class="responsive-img" />
 
                 <div class="table-grid">
 
                     <!-- United Kingdom & Ireland -->
 					<div class="region">
 						<h3>United Kingdom & Ireland</h3>
+                        <div class = 'table-responsive'> 
 						<table class="clean-table">
 						<tbody>
 							<tr><td>Alderhey Children's Hospital, Liverpool, UK</td><td>Bernadette Khodaghalian</td></tr>
@@ -278,11 +416,13 @@
 							<tr><td>Newcastle University Hospital, Newcastle, UK</td><td>Zdenka Reinhardt</td></tr>
 						</tbody>
 						</table>
+                        </div>
 					</div>
 
                     <!-- Spain -->
 					<div class="region">
 					    <h3>Spain</h3>
+                        <div class = 'table-responsive'> 
 						<table class="clean-table">
 						<tbody>
 							<tr><td>Hospital General Universitario Gregorio Marañón, Madrid, Spain</td><td>Constancio Medrano</td></tr>
@@ -296,11 +436,13 @@
 							<tr><td>Hospital Universitario Virgen de las Nieves, Granada, Spain</td><td>Francesca Perin</td></tr>  
 						</tbody>
 					    </table>
+                        </div>
 					</div>
 
                     <!-- Italy -->
 					<div class="region">
 						<h3>Italy</h3>
+                        <div class = 'table-responsive'> 
 						<table class="clean-table">
 						<tbody>
 							<tr><td>Bambino Gesu Hospital, Rome, Italy</td><td>Anwar Baban</td></tr>
@@ -313,11 +455,13 @@
 						    <tr><td>Ospedale papa Giovanni XXIII, Bergamo, Italy</td><td>Francesca Raimondi</td></tr>
 						</tbody>
 						</table>
+                        </div>
 					</div>
 
                     <!-- Other Europe -->
 					<div class="region">
                         <h3>Northern and Eastern Europe</h3>
+                        <div class = 'table-responsive'> 
                         <table class="clean-table">
                         <tbody>
                             <tr><td>Onassis Cardiac surgery center, Athens, Greece</td><td>Aris Anastasakis</td></tr>
@@ -342,11 +486,13 @@
                             <tr><td>Centro Hospitalar de São João, Porto, Portugal </td><td>Joana Miranda</td></tr>
                         </tbody>
                         </table>
+                        </div>
                     </div>
 
                     <!-- South America -->
                     <div class="region">
                         <h3>South America</h3>
+                        <div class = 'table-responsive'> 
                         <table class="clean-table">
                         <tbody>
                             <tr><td>Fundación Favaloro University Hospital, Buenos Aires, Argentina</td><td>Adrian Fernandez</td></tr>
@@ -355,11 +501,13 @@
 
                         </tbody>
                         </table>
+                        </div>
                     </div>
 
                     <!-- Asia-Pacific -->
                     <div class="region">
                         <h3>Asia and Australasia</h3>
+                        <div class = 'table-responsive'> 
                         <table class="clean-table">
                         <tbody>
                             <tr><td>The Royal Children’s Hospital, Melbourne, Australia</td><td>Robert Weintraub</td></tr>                                    
@@ -367,6 +515,7 @@
                             <tr><td>Department of Pediatrics, Faculty of Medicine and Graduate school of Medicine, Hokkaido University Hospital, Sapporo, Japan</td><td>Hirokuni Yamazawa </td></tr>
                         </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </section>
