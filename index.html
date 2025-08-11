@@ -252,20 +252,26 @@
 
             .footer-logos {
                 display: flex;
-                flex-direction: column;
-                gap: 12px;
-                align-items: flex-end;
+                gap: 20px; /* space between portrait and stacked logos */
+                align-items: center; /* vertically align portrait with stacked logos */
                 padding-right: 20px;
-                flex: 1;
+                margin-top: 10px;
             }
 
-            .footer-logo {
+            .logo-left img {
+                max-width: 150px; /* adjust for portrait size */
                 height: auto;
-                width: 400px;
-                max-width: 50%;
-                display: block;
-                margin: 10px;
-                padding: 10px;
+            }
+
+            .logo-right {
+                display: flex;
+                flex-direction: column; /* stack the two landscape logos */
+                gap: 12px;
+            }
+
+            .logo-right img {
+                max-width: 200px; /* adjust for landscape size */
+                height: auto;
             }
 
             @media (max-width: 768px) {
@@ -275,10 +281,19 @@
                     text-align: center;
                 }
 
-                .footer-contact,
-                .footer-logos {
+                .footer-contact {
                     align-items: center;
                     padding: 0;
+                }
+
+                .footer-logos {
+                    flex-direction: column; /* stack portrait and landscape groups on mobile */
+                    align-items: center;
+                }
+
+                .logo-right {
+                    flex-direction: column;
+                    align-items: center;
                 }
             }
 
@@ -556,8 +571,14 @@
                 </section>
 
                 <div class="footer-logos">
-                <img src="logo_black watermark.png" alt="Logo 1" class="footer-logo" />
-                <img src="gosh_logo.png" alt="Logo 2" class="footer-logo" />
+                    <div class = "logo-left">
+                        <img src="ICVD_logo_grey.png" alt="Logo 2" class="footer-logo" />
+                    </div>
+
+                    <div class = "logo-right">
+                        <img src="logo_black watermark.png" alt="Logo 1" class="footer-logo" />
+                        <img src="gosh_logo.png" alt="Logo 2" class="footer-logo" />
+                    </div>
                 </div>
             </div>
 
